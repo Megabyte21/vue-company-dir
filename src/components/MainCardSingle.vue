@@ -24,7 +24,7 @@ const selectCard = () => {
 
 <style scoped lang="postcss">
 .card {
-    @apply cursor-pointer overflow-hidden rounded-md bg-slate-100 p-8 shadow-md transition-transform duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-slate-900;
+    @apply cursor-pointer overflow-hidden rounded-md bg-blue-200 p-8 shadow-md transition-transform duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-slate-900;
     &-image {
         img {
         @apply mx-auto rounded-full object-contain;
@@ -33,13 +33,13 @@ const selectCard = () => {
      &-details {
       @apply flex flex-col gap-2  pt-6 text-center;
       &-name {
-        @apply text-3xl font-thin tracking-wider text-slate-800;
+        @apply text-3xl font-thin tracking-wider text-red-800;
       }
       &-job {
-        @apply -mt-2 text-xs font-bold text-yellow-700;
+        @apply -mt-2 text-xs font-bold text-blue-700;
       }
       &-quote {
-        @apply pt-4 text-lg italic text-slate-800;
+        @apply pt-4 text-lg italic text-green-800;
       }
     }
 }
