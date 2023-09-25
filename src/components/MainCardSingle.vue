@@ -1,7 +1,7 @@
 <script setup>
 import { faker } from '@faker-js/faker'
-const firstName = faker.name.firstName();
-const lastName = faker.name.lastName();
+const firstName = faker.person.firstName();
+const lastName = faker.person.lastName();
 const fullName = `${firstName} ${lastName}`;
 const selectCard = () => {
     console.log(`${fullName} selected`)
@@ -15,8 +15,8 @@ const selectCard = () => {
         </div>
         <div class="card-details">
             <p class="card-details-name">{{ fullName }}</p>
-            <p class="card-details-job">{{ faker.name.jobTitle() }}, {{ faker.name.jobArea() }}</p>
-            <p class="card-details-email">{{ faker.internet.exampleEmail(firstName, lastName) }}</p>
+            <p class="card-details-job">{{ faker.person.jobTitle() }}, {{ faker.person.jobArea() }}</p>
+            <p class="card-details-email">{{ faker.internet.exampleEmail({firstName, lastName}) }}</p>
             <p class="card-details-quote">{{ faker.lorem.paragraph() }}</p>
         </div>
     </div>
