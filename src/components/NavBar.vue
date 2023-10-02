@@ -1,19 +1,24 @@
 <script setup>
 import { ref } from "vue";
+<<<<<<< HEAD
 import { useAuth } from '@/composables/useAuth'
 
 const { isAuthenticated, logout, user } = useAuth()
 const brand = ref(import.meta.env.VITE_APP_NAME)
+=======
+const brand = ref('🏢 Fake Company Directory')
+>>>>>>> parent of a829e77 (Added more funcitons to the main and added login)
 </script>
 
 
 <template>
     <nav>
         <div class="wrapper">
-            <RouterLink to="/" class="brand">
+            <div class="brand">
                 <span class="brand-title">{{ brand }}</span>
-            </RouterLink>
+            </div>
             <div class="menu">
+<<<<<<< HEAD
                 <p v-show="isAuthenticated" class="px-2 py-4 mx-2">Welcome back <strong><i>{{ user?.email }}</i></strong></p>
                 <div v-if="isAuthenticated">
                 <RouterLink :to="{ name: 'Settings' }" class="menu-item">Settings</RouterLink>
@@ -22,6 +27,11 @@ const brand = ref(import.meta.env.VITE_APP_NAME)
                 <div v-else>
                 <RouterLink :to="{ name: 'Login'}" class="menu-login">Login</RouterLink>
                 </div>
+=======
+                <a href="#" class="menu-item">Departments</a>
+                <a href="#" class="menu-item">Settings</a>
+                <a href="#" class="menu-login">Logout</a>
+>>>>>>> parent of a829e77 (Added more funcitons to the main and added login)
             </div>
         </div>
     </nav>
@@ -41,17 +51,11 @@ const brand = ref(import.meta.env.VITE_APP_NAME)
     }
     .menu{
         @apply flex gap-2;
-        div {
-            @apply py-2;
-        }
         &-item {
             @apply rounded-md px-4 py-2 hover:bg-yellow-500 hover:text-slate-900;
         }
         &-login {
-            @apply rounded-md bg-blue-500 px-4 py-2 text-red-100 hover:bg-red-700;
-        } 
-        &-logout {
-            @apply rounded-md bg-red-500 mx-2 px-4 py-2 text-red-100 hover:bg-red-700;
+            @apply rounded-md bg-red-500 px-4 py-2 text-red-100 hover:bg-red-700;
         }
     }
 </style>
