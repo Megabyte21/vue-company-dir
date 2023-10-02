@@ -8,9 +8,13 @@
 
   const username = ref('')
   const password = ref('')
-  const logUserIn = () => {
-    if (login(username.value, password.value)) {
+  const logUserIn = async () => {
+    if (await login(username.value, password.value)) {
+      if (router.query.redirect) {
+        router.push(route.query.redirect)
+      } else {
         router.push({ name: 'Home' })
+      }
     } else {
         logout()
     }

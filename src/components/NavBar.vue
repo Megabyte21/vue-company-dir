@@ -14,7 +14,7 @@ const brand = ref(import.meta.env.VITE_APP_NAME)
                 <span class="brand-title">{{ brand }}</span>
             </RouterLink>
             <div class="menu">
-                <p v-show="isAuthenticated" class="px-2 py-4 mx-2">Welcome back <strong><i>{{ user.name }}</i></strong></p>
+                <p v-show="isAuthenticated" class="px-2 py-4 mx-2">Welcome back <strong><i>{{ user?.email }}</i></strong></p>
                 <div v-if="isAuthenticated">
                 <RouterLink :to="{ name: 'Settings' }" class="menu-item">Settings</RouterLink>
                 <RouterLink :to="{ name: 'Login'}" @click="logout" class="menu-logout">Logout</RouterLink>
